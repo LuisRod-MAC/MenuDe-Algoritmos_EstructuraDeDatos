@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+int par (int x, int y);
+//FUNCION PRINCIPAL
+int main () {
+	int n, contador=0, rep;
+	do{
+	cout << "Numero entero: ";
+	cin >> n;
+	par(n, contador); //Llamado a la funcion
+	cout <<"\n\nNuevo numero? Si(1) o No(2): ";
+	cin >> rep;
+	system("cls");
+	}while(rep==1);
+	system("pause");
+	return 0;
+}
+//FUNCION PAR()
+int par(int n, int contador) {
+	if (n>0) { //Condicion para pausar la recursividad
+		if (n%2==0) {
+			contador=contador+1;
+			par(n-1, contador); //recursividad
+		}
+		else {
+			par(n-1, contador); //recursividad
+		}
+	}
+	else{
+		cout << "\n# de pares que tiene: " << contador;
+	}
+}
+
